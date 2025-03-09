@@ -22,6 +22,19 @@ docker-compose up
 npm run start
 ```
 
+## Endpoints
+POST http://localhost:3000/local/links 
+GET  http://localhost:3000/local/*  
 
 ## Things to do
 - Fix the vulnerabilities in the serverless-offline plugin
+- Do the unit test coverages
+- Add environments variables
+- Add validators
+- Add typescript models
+- Add error handling
+- Add handlers to extract useful data from http request
+- Add Http Responses templates
+
+## Limitations:
+- We can store any string, we do not verify that the string stored is a url

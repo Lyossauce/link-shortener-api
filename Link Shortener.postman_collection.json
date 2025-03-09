@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "d51b7ac7-8449-43e9-b2c8-51d800f11a8b",
+		"name": "Link Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21779104",
+		"_collection_link": "https://lively-shuttle-602799.postman.co/workspace/My-Workspace~8a5e7257-9a2a-4410-846c-004953152825/collection/21779104-d51b7ac7-8449-43e9-b2c8-51d800f11a8b?action=share&source=collection_link&creator=21779104"
+	},
+	"item": [
+		{
+			"name": "POST /links",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://stoikio.notion.site/URL-Shortener-27660127622d489db8dd53b8fc93df6c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/local/links",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"local",
+						"links"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
