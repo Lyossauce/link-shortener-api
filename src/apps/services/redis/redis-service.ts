@@ -3,6 +3,9 @@ import { createClient } from 'redis';
 // USE A BETTER WAY TO HANDLE REDIS CLIENT
 // USER ENVIRONMENT VARIABLES FOR REDIS CONNECTION DETAILS
 
+const REDIS_URL = 'redis://:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81@localhost:6379';
+const TTL = 60 * 60 * 24 * 7; // 1 week in seconds
+
 /**
  * Sets a key-value pair in Redis.
  *
@@ -14,9 +17,9 @@ import { createClient } from 'redis';
  */
 export const setRedisKey = async (key: string, value: string): Promise<void> => {
     const client = await createClient({
-        url: 'redis://:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81@localhost:6379'
+        url: REDIS_URL,
     }).connect();
-    await client.set(key, value);
+    await client.set(key, value, {EX: TTL});
     await client.disconnect();
 }
 
@@ -29,7 +32,7 @@ export const setRedisKey = async (key: string, value: string): Promise<void> => 
  */
 export const getRedisKey = async (key: string): Promise<string | null> => {
     const client = await createClient({
-        url: 'redis://:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81@localhost:6379'
+        url: REDIS_URL
     }).connect();
     const value = await client.get(key);
     await client.disconnect();
