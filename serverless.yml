@@ -19,6 +19,12 @@ functions:
     - http:
         path: links
         method: post
+  redirectLink:
+    handler: ./src/apps/links/handlers/redirectLink.main
+    events:
+    - http:
+        path: /{proxy+}
+        method: GET
   
 custom:
   webpack:
