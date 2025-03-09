@@ -2,7 +2,7 @@ service: starter
 
 variablesResolutionMode: 20210326
 
-frameworkVersion: "2"
+frameworkVersion: "3"
 
 plugins:
   - serverless-webpack # must be the first of the list
@@ -10,9 +10,15 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: nodejs20.x
 
 functions:
+  createLink:
+    handler: ./src/apps/links/handlers/postLinks.main
+    events:
+    - http:
+        path: links
+        method: post
   
 custom:
   webpack:
