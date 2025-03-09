@@ -1,0 +1,21 @@
+service: starter
+
+variablesResolutionMode: 20210326
+
+frameworkVersion: "2"
+
+plugins:
+  - serverless-webpack # must be the first of the list
+  - serverless-offline # must be the last of the list
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    packager: yarn # or npm
+    includeModules: true
