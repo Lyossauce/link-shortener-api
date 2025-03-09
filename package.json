@@ -4,7 +4,7 @@
   "description": "...",
   "licence": "ISC",
   "scripts": {
-    "local": "serverless offline start --stage local",
+    "start": "serverless offline start --stage local",
     "lint": "tslint --project tsconfig.json",
     "test": "node node_modules/jest/bin/jest --config='./jest.config.js' --forceExit --detectOpenHandles --coverage"
   },

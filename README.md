@@ -19,7 +19,7 @@ docker-compose up
 ```
 
 ```bash
-npm start
+npm run start
 ```
 
 
