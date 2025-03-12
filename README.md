@@ -38,3 +38,5 @@ GET  http://localhost:3000/local/*
 
 ## Limitations:
 - We can store any string, we do not verify that the string stored is a url
+- We could optimize redis requests especially to avoid having several key with the same value
+- lambda cold-start
